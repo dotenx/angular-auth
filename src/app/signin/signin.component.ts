@@ -18,9 +18,8 @@ export class SigninComponent {
     password: new FormControl('', Validators.required)
   });
 
-  
+
   async signin() {
-    console.log(this.signupForm.value);
     this.authService.login({
       email: this.signupForm.value.email,
       password: this.signupForm.value.password

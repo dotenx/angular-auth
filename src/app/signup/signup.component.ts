@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'app-signup',
@@ -10,8 +11,7 @@ import { AuthService } from '../auth.service';
   providers: [AuthService]
 })
 export class SignupComponent {
-
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   signupForm: FormGroup = new FormGroup({
     email: new FormControl('', Validators.required),
@@ -19,17 +19,16 @@ export class SignupComponent {
     password: new FormControl('', Validators.required)
   });
 
-  
+
   async signup() {
-    console.log(this.signupForm.value);
     this.authService.signup({
       email: this.signupForm.value.email,
       fullname: this.signupForm.value.fullname,
       password: this.signupForm.value.password
     })?.subscribe(
-      (data) => {
-        console.log(data);
+      () => {
         alert('Signup successful');
+        this.router.navigate(['/login'])
       }
     );
   }
