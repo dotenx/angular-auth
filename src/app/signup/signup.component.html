@@ -1,27 +1,12 @@
 <!-- This is an example component -->
-<div class="max-w-2xl mx-auto">
+<div class="max-w-sm  mx-auto">
   <div
-    class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm p-4 sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700"
+    class="bg-white shadow-md border border-gray-200 rounded-lg p-4 sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700"
   >
     <form class="space-y-6" [formGroup]="signupForm" (submit)="signup()">
       <h3 class="text-xl font-medium text-gray-900 dark:text-white">
         Sign up for a new account
-      </h3>
-      <div>
-        <label
-          for="email"
-          class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300"
-          >Email</label
-        >
-        <input
-          type="email"
-          formControlName="email"
-          id="email"
-          class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-          placeholder="name@company.com"
-          required=""
-        />
-      </div>
+      </h3>   
       <div>
         <label
           for="fullname"
@@ -33,7 +18,20 @@
           formControlName="fullname"
           id="fullname"
           class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-          placeholder="name@company.com"
+          required=""
+        />
+      </div>
+      <div>
+        <label
+          for="email"
+          class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300"
+          >Email</label
+        >
+        <input
+          type="email"
+          formControlName="email"
+          id="email"
+          class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
           required=""
         />
       </div>
@@ -47,7 +45,6 @@
           type="password"
           formControlName="password"
           id="password"
-          placeholder="••••••••"
           class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
           required=""
         />
